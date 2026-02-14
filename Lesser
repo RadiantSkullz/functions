@@ -1,0 +1,2253 @@
+-- ts file was generated at discord.gg/25ms
+
+local u1 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Qing-Yun-Dev/UI/Main/Notification.lua'))()
+
+function Notify(p2)
+    u1:ForceNotify({
+        Name = '\u{fffd}\u{fffd}\u{4e91} & DX | Pressure',
+        Text = p2,
+        Icon = 'rbxassetid://11401835376',
+        Duration = 5,
+    })
+end
+
+local u3 = 'https://raw.githubusercontent.com/Qing-Yun-Dev/Scripts/Main/Authentication.json'
+local _, _ = pcall(function()
+    Data = game:HttpGet(u3)
+    Data = game:GetService('HttpService'):JSONDecode(Data)
+end)
+local v4, v5, v6 = pairs(Data.Data.Pressure)
+local v7 = {
+    Version = '1.0',
+    Blacklist = true,
+}
+local v8 = true
+
+while true do
+    local v9
+
+    v6, v9 = v4(v5, v6)
+
+    if v6 == nil then
+        break
+    end
+    if v7[v6] then
+        if v9 ~= v7[v6] then
+            warn(v6 .. ' \u{4e0d}\u{662f}\u{9884}\u{671f}\u{503c} ' .. v7[v6])
+            warn('\u{fffd}\u{fffd}\u{786e}\u{503c}\u{4e3a}' .. Data.Data.Pressure[v6])
+
+            v8 = false
+        end
+    else
+        warn('Key ' .. v6 .. ' not found in Auth table')
+
+        v8 = false
+    end
+end
+
+local _Name = game.Players:GetPlayerByUserId(game.Players.LocalPlayer.UserId).Name
+local u11 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Qing-Yun-Dev/Scripts/Main/Blacklist.lua'))()
+local v17, v18 = (function(p12)
+    local v13, v14, v15 = pairs(u11)
+
+    while true do
+        local v16
+
+        v15, v16 = v13(v14, v15)
+
+        if v15 == nil then
+            break
+        end
+        if v16[1] == p12 then
+            return v16[2], v16[3]
+        end
+    end
+
+    return false
+end)(_Name)
+
+if v8 then
+    Notify('\u{fffd}\u{fffd}\u{8bc1}\u{6210}\u{529f}')
+
+    if game:GetService('UserInputService').KeyboardEnabled and game:GetService('UserInputService').MouseEnabled then
+        Notify('F5 Hide UI')
+    elseif game:GetService('UserInputService').TouchEnabled then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Qing-Yun-Dev/UI/Main/Open.lua'))()
+    end
+
+    local u19 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Qing-Yun-Dev/UI/Main/Vape.lua'))()
+    local v20 = u19:Window('\u{fffd}\u{fffd}\u{4e91} & DX | Pressure | \u{6ce8}\u{5165}\u{5668} : ' .. identifyexecutor(), Color3.fromRGB(44, 120, 224))
+
+    if v17 == false then
+        local v21 = v20:Tab('\u{fffd}\u{fffd}\u{8981}')
+        local v22 = getrawmetatable(game)
+
+        setreadonly(v22, false)
+
+        local ___index = v22.__index
+
+        v22.__index = newcclosure(function(p24, p25)
+            if p25 ~= 'WalkSpeed' then
+                return ___index(p24, p25)
+            end
+        end)
+
+        local function u34(p26, p27, p28, p29, p30)
+            if p30 then
+                local _Highlight = Instance.new('Highlight')
+
+                _Highlight.Parent = p26
+                _Highlight.FillColor = p27
+                _Highlight.FillTransparency = 0.5
+                _Highlight.Name = 'QYHighlight'
+            end
+
+            local _BillboardGui = Instance.new('BillboardGui')
+
+            _BillboardGui.AlwaysOnTop = true
+            _BillboardGui.Parent = p26
+            _BillboardGui.Size = p28
+            _BillboardGui.StudsOffset = Vector3.new(0, 1, 0)
+            _BillboardGui.Name = 'QY'
+
+            local _TextLabel = Instance.new('TextLabel')
+
+            _TextLabel.Text = p29
+            _TextLabel.Font = Enum.Font.SourceSans
+            _TextLabel.FontSize = Enum.FontSize.Size24
+            _TextLabel.TextColor3 = p27
+            _TextLabel.BackgroundTransparency = 1
+            _TextLabel.Size = p28
+            _TextLabel.Parent = _BillboardGui
+            _TextLabel.Name = 'QY'
+            _TextLabel.TextStrokeTransparency = 0
+            _TextLabel.TextStrokeColor3 = Color3.new(1, 1, 1)
+
+            return p30, _BillboardGui
+        end
+
+        local u35 = {
+            A60 = 'A-60',
+            Abomination = 'Abomination',
+            Angler = 'Angler',
+            Blitz = 'Blitz',
+            Baldi = 'Baldi',
+            Bouncer = 'Bouncer',
+            BiggerStatue = 'BiggerStatue',
+            Chainsmoker = 'Chainsmoker',
+            DiVine = 'DiVine',
+            Eyefestation = 'Eyefestation',
+            Froger = 'Froger',
+            FishBody = 'Fish',
+            Harbinger = 'Death Angel',
+            Pinkie = 'Pinkie',
+            Pandemonium = 'Pandemonium',
+            Parasite = 'Parasite',
+            Pipsqueak = 'Pipsqueak',
+            RottenWallDweller = 'RottenWallDweller',
+            RidgeAngler = 'Angler',
+            RidgeBlitz = 'Blitz',
+            RidgeChainsmoker = 'Chainsmoker',
+            RidgeFroger = 'Froger',
+            RidgePinkie = 'Pinkie',
+            SkeletonHead = 'SkeletonHead',
+            StatueRoot = 'Statue',
+            WallDweller = 'WallDweller',
+        }
+        local u36 = {
+            A60 = 'A-60',
+            Angler = 'Angler',
+            Blitz = 'Blitz',
+            Baldi = 'Baldi',
+            BiggerStatue = 'BiggerStatue',
+            Chainsmoker = 'Chainsmoker',
+            Eyefestation = 'Eyefestation',
+            Froger = 'Froger',
+            FishBody = 'Fish',
+            Harbinger = 'Death Angel',
+            Pinkie = 'Pinkie',
+            Pandemonium = 'Pandemonium',
+            Parasite = 'Parasite',
+            Pipsqueak = 'Pipsqueak',
+            RottenWallDweller = 'RottenWallDweller',
+            RidgeAngler = 'Angler',
+            RidgeBlitz = 'Blitz',
+            RidgeChainsmoker = 'Chainsmoker',
+            RidgeFroger = 'Froger',
+            RidgePinkie = 'Pinkie',
+            SkeletonHead = 'SkeletonHead',
+            StatueRoot = 'Statue',
+            WallDweller = 'WallDweller',
+        }
+        local u37 = {
+            A60 = 'A-60',
+            Angler = 'Angler',
+            Blitz = 'Blitz',
+            Froger = 'Froger',
+            Pinkie = 'Pinkie',
+            Chainsmoker = 'Chainsmoker',
+            Pandemonium = 'Pandemonium',
+            RidgeAngler = 'Angler',
+            RidgeBlitz = 'Blitz',
+            RidgeChainsmoker = 'Chainsmoker',
+            RidgeFroger = 'Froger',
+            RidgePinkie = 'Pinkie',
+        }
+        local u38 = {
+            NormalKeyCard = 'Key',
+            InnerKeyCard = 'Key',
+            RidgeKeyCard = 'Key',
+            PasswordPaper = 'Password',
+        }
+        local u39 = {
+            ['Currency5-1'] = '5',
+            ['Currency5-2'] = '5',
+            ['Currency5-3'] = '5',
+            ['Currency5-4'] = '5',
+            ['Currency5-5'] = '5',
+            ['Currency5-6'] = '5',
+            ['Currency5-7'] = '5',
+            ['Currency10-1'] = '10',
+            ['Currency10-2'] = '10',
+            ['Currency10-3'] = '10',
+            ['Currency10-4'] = '10',
+            ['Currency10-5'] = '10',
+            ['Currency10-6'] = '10',
+            ['Currency10-7'] = '10',
+            ['Currency10-8'] = '10',
+            ['Currency15-1'] = '15',
+            ['Currency15-2'] = '15',
+            ['Currency15-3'] = '15',
+            ['Currency15-4'] = '15',
+            ['Currency15-5'] = '15',
+            ['Currency15-6'] = '15',
+            ['Currency15-7'] = '15',
+            ['Currency15-8'] = '15',
+            ['Currency15-9'] = '15',
+            ['Currency15-10'] = '15',
+            ['Currency15-11'] = '15',
+            ['Currency15-12'] = '15',
+            ['Currency25-1'] = '25',
+            ['Currency25-2'] = '25',
+            ['Currency25-3'] = '25',
+            ['Currency25-4'] = '25',
+            ['Currency25-5'] = '25',
+            ['Currency25-6'] = '25',
+            ['Currency25-7'] = '25',
+            ['Currency25-8'] = '25',
+            ['Currency25-9'] = '25',
+            ['Currency25-10'] = '25',
+            ['Currency25-11'] = '25',
+            ['Currency25-12'] = '25',
+            Currency50 = '50',
+            ['Currency50-1'] = '50',
+            ['Currency50-2'] = '50',
+            ['Currency50-3'] = '50',
+            ['Currency50-4'] = '50',
+            ['Currency50-5'] = '50',
+            ['Currency50-6'] = '50',
+            ['Currency50-7'] = '50',
+            ['Currency50-8'] = '50',
+            ['Currency100-1'] = '100',
+            ['Currency100-2'] = '100',
+            ['Currency100-3'] = '100',
+            ['Currency100-4'] = '100',
+            ['Currency100-5'] = '100',
+            ['Currency100-6'] = '100',
+            ['Currency100-7'] = '100',
+            ['Currency100-8'] = '100',
+            ['Currency100-9'] = '100',
+            ['Currency100-10'] = '100',
+            ['Currency200-1'] = '200',
+            ['Currency200-2'] = '200',
+            ['Currency200-3'] = '200',
+            ['Currency200-4'] = '200',
+            ['Currency200-5'] = '200',
+            ['Currency200-6'] = '200',
+            ['Currency200-7'] = '200',
+            Relic = '500',
+            GY5Cup = '5',
+            GY5Can1 = '5',
+            GY5Can2 = '5',
+            ['GY10-1'] = '10',
+            ['GY10-2'] = '10',
+            ['GY10-3'] = '10',
+            ['GY10-4'] = '10',
+            GY15 = '15',
+            GY25 = '25',
+            GY50 = '50',
+            GY100 = '100',
+            GY200 = '200',
+            GY250 = '250',
+        }
+        local u40 = {
+            AltBattery1 = 'Battery',
+            AltBattery2 = 'Battery',
+            AltBattery3 = 'Battery',
+            DefaultBattery1 = 'Battery',
+            DefaultBattery2 = 'Battery',
+            DefaultBattery3 = 'Battery',
+            RoomsBattery = 'Battery',
+            DropBattery = 'Battery',
+        }
+        local u41 = {
+            Blacklight = 'Blacklight',
+            Book = 'The Necrobloxicon',
+            BigFlashBeacon = 'Flash Beacon',
+            BlueToyRemote = 'Blue Toy Remote',
+            CatPlush = 'Kibo Plush',
+            CodeBreacher = 'Code Breacher',
+            CrateBlacklight = 'Blacklight',
+            DwellerPiece = 'Dweller Chunk',
+            Defib = 'Defibrillator',
+            Decoder = 'Decoder',
+            DogPlush = 'Logan Plush',
+            EvilCat = 'Kibo Plush',
+            FlashBeacon = 'Flash Beacon',
+            Flashlight = 'Flashlight',
+            Gravelight = 'Gravelight',
+            Gummylight = 'Gummylight',
+            Glider = 'Glider',
+            HealthBoost = 'Perithesene',
+            IntensityIncrease = 'Intensity Increase',
+            Lantern = 'Lantern',
+            Medkit = 'Medkit',
+            Notebook = 'Notebook',
+            OxygenTank = 'Oxygen Tank',
+            SPRINT = 'SPRINT',
+            SmallLantern = 'Lantern',
+            Scanner = 'Scanner',
+            Splorglight = 'Splorglight',
+            RedeemerRevolver = 'Redeemer Revolver',
+            ToyRemote = 'Toy Remote',
+            WindupLight = 'Hand Cranked Flashlight',
+            ['25HealthBoost'] = 'Neloprephine',
+        }
+        local u42 = {
+            ['1Shell1'] = '1',
+            ['1Shell2'] = '1',
+            ['1Shell3'] = '1',
+            ['2Shells1'] = '2',
+            ['2Shells2'] = '2',
+            ['2Shells3'] = '2',
+            ['3Shells1'] = '3',
+            ['3Shells2'] = '3',
+            ['3Shells3'] = '3',
+            ['4Shells1'] = '4',
+            ['4Shells2'] = '4',
+            ['4Shells3'] = '4',
+            ['8Shells1'] = '8',
+            ['8Shells2'] = '8',
+            ['8Shells3'] = '8',
+        }
+
+        v21:Toggle('\u{fffd}\u{fffd}\u{4f53}\u{63d0}\u{793a} | Entity Notify', false, function(p43)
+            if p43 then
+                SpawnNotify = workspace.DescendantAdded:Connect(function(p44)
+                    if u36[p44.Name] and p44.Parent == workspace or (p44.Name == 'Eyefestation' or (p44.Name == 'WallDweller' or (p44.Name == 'RottenWallDweller' or (p44.Name == 'Statue' or (p44.Name == 'BiggerStatue' or (p44.Name == 'DiVine' or (p44.Name == 'FishBody' or (p44.Name == 'Rebarb' or (p44.Name == 'Bouncer' or p44.Name == 'SkeletonHead'))))))))) then
+                        Notify(u36[p44.Name] .. '\u{fffd}\u{fffd}\u{751f}\u{6210}')
+                    end
+                end)
+                DespawnNotify = workspace.DescendantRemoving:Connect(function(p45)
+                    if u36[p45.Name] and p45.Parent == workspace then
+                        if p45.Name == 'Pandemonium' or (p45.Name == 'Eyefestation' or (p45.Name == 'WallDweller' or (p45.Name == 'RottenWallDweller' or (p45.Name == 'Statue' or (p45.Name == 'BiggerStatue' or (p45.Name == 'DiVine' or (p45.Name == 'FishBody' or (p45.Name == 'Rebarb' or (p45.Name == 'Baldi' or (p45.Name == 'Bouncer' or p45.Name == 'SkeletonHead')))))))))) then
+                            return
+                        end
+
+                        task.wait()
+                        Notify(u36[p45.Name] .. '\u{fffd}\u{fffd}\u{6d88}\u{5931}')
+                    end
+                end)
+            else
+                if SpawnNotify then
+                    SpawnNotify:Disconnect()
+                end
+                if DespawnNotify then
+                    DespawnNotify:Disconnect()
+                end
+            end
+        end)
+
+        local _TextChatService = game:GetService('TextChatService')
+
+        function QYTCS(p47)
+            _TextChatService.TextChannels.RBXGeneral:SendAsync(tostring(p47))
+        end
+
+        v21:Toggle('\u{fffd}\u{fffd}\u{5929}\u{5b9e}\u{4f53}\u{63d0}\u{793a} | Chat Entity Notify', false, function(p48)
+            if p48 then
+                SpawnNotify = workspace.DescendantAdded:Connect(function(p49)
+                    if u36[p49.Name] and p49.Parent == workspace or (p49.Name == 'Eyefestation' or (p49.Name == 'WallDweller' or (p49.Name == 'RottenWallDweller' or (p49.Name == 'Statue' or (p49.Name == 'BiggerStatue' or (p49.Name == 'DiVine' or (p49.Name == 'FishBody' or (p49.Name == 'Rebarb' or (p49.Name == 'Bouncer' or p49.Name == 'SkeletonHead'))))))))) then
+                        QYTCS(u36[p49.Name] .. '\u{fffd}\u{fffd}\u{751f}\u{6210}')
+                    end
+                end)
+                DespawnNotify = workspace.DescendantRemoving:Connect(function(p50)
+                    if u36[p50.Name] and p50.Parent == workspace then
+                        if p50.Name == 'Pandemonium' or (p50.Name == 'Eyefestation' or (p50.Name == 'WallDweller' or (p50.Name == 'RottenWallDweller' or (p50.Name == 'Statue' or (p50.Name == 'BiggerStatue' or (p50.Name == 'DiVine' or (p50.Name == 'FishBody' or (p50.Name == 'Rebarb' or (p50.Name == 'Baldi' or (p50.Name == 'Bouncer' or p50.Name == 'SkeletonHead')))))))))) then
+                            return
+                        end
+
+                        task.wait()
+                        QYTCS(u36[p50.Name] .. '\u{fffd}\u{fffd}\u{6d88}\u{5931}')
+                    end
+                end)
+            else
+                if SpawnNotify then
+                    SpawnNotify:Disconnect()
+                end
+                if DespawnNotify then
+                    DespawnNotify:Disconnect()
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{4f53}\u{900f}\u{89c6} | Entity ESP', false, function(p51)
+            if p51 then
+                EntityESP = workspace.DescendantAdded:Connect(function(p52)
+                    if u35[p52.Name] and p52.Parent == workspace or (p52.Name == 'Eyefestation' or (p52.Name == 'WallDweller' or (p52.Name == 'RottenWallDweller' or (p52.Name == 'Statue' or (p52.Name == 'BiggerStatue' or (p52.Name == 'DiVine' or (p52.Name == 'FishBody' or (p52.Name == 'Rebarb' or (p52.Name == 'Bouncer' or p52.Name == 'SkeletonHead'))))))))) then
+                        local _, _ = u34(p52, Color3.new(1, 0, 0), UDim2.new(0, 100, 0, 100), u35[p52.Name], true)
+                    end
+                end)
+
+                local v53, v54, v55 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v56
+
+                    v55, v56 = v53(v54, v55)
+
+                    if v55 == nil then
+                        break
+                    end
+                    if u35[v56.Name] and v56.Parent == workspace or (v56.Name == 'Eyefestation' or (v56.Name == 'WallDweller' or (v56.Name == 'RottenWallDweller' or (v56.Name == 'Statue' or (v56.Name == 'BiggerStatue' or (v56.Name == 'DiVine' or (v56.Name == 'FishBody' or (v56.Name == 'Rebarb' or (v56.Name == 'Bouncer' or v56.Name == 'SkeletonHead'))))))))) then
+                        local _, _ = u34(inst, Color3.new(1, 0, 0), UDim2.new(0, 100, 0, 100), u35[v56.Name], true)
+                    end
+                end
+            else
+                if EntityESP then
+                    EntityESP:Disconnect()
+                end
+
+                local v57, v58, v59 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v60
+
+                    v59, v60 = v57(v58, v59)
+
+                    if v59 == nil then
+                        break
+                    end
+                    if u35[v60.Name] then
+                        v60.QYHighlight:Destroy()
+                        v60.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5319}\u{5361}\u{900f}\u{89c6} | Key ESP', false, function(p61)
+            if p61 then
+                KeyESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p62)
+                    if u38[p62.Name] then
+                        u34(p62, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), u38[p62.Name])
+                    end
+                end)
+
+                local v63, v64, v65 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v66
+
+                    v65, v66 = v63(v64, v65)
+
+                    if v65 == nil then
+                        break
+                    end
+                    if u38[v66.Name] then
+                        u34(v66, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), u38[v66.Name])
+                    end
+                end
+            else
+                if KeyESP then
+                    KeyESP:Disconnect()
+                end
+
+                local v67, v68, v69 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v70
+
+                    v69, v70 = v67(v68, v69)
+
+                    if v69 == nil then
+                        break
+                    end
+                    if u38[v70.Name] then
+                        v70.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{6c60}\u{900f}\u{89c6} | Battery ESP', false, function(p71)
+            if p71 then
+                BatteryESP = workspace.GameplayFolder.DescendantAdded:Connect(function(p72)
+                    if u40[p72.Name] then
+                        u34(p72, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), u40[p72.Name])
+                    end
+                end)
+
+                local v73, v74, v75 = ipairs(workspace.GameplayFolder:GetDescendants())
+
+                while true do
+                    local v76
+
+                    v75, v76 = v73(v74, v75)
+
+                    if v75 == nil then
+                        break
+                    end
+                    if u40[v76.Name] then
+                        u34(v76, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), u40[v76.Name])
+                    end
+                end
+            else
+                if BatteryESP then
+                    BatteryESP:Disconnect()
+                end
+
+                local v77, v78, v79 = ipairs(workspace.GameplayFolder:GetDescendants())
+
+                while true do
+                    local v80
+
+                    v79, v80 = v77(v78, v79)
+
+                    if v79 == nil then
+                        break
+                    end
+                    if u40[v80.Name] then
+                        v80.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{54c1}\u{900f}\u{89c6} | Item ESP', false, function(p81)
+            if p81 then
+                ItemESP = workspace.GameplayFolder.DescendantAdded:Connect(function(p82)
+                    if u41[p82.Name] then
+                        u34(p82, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), u41[p82.Name])
+                    end
+                end)
+
+                local v83, v84, v85 = ipairs(workspace.GameplayFolder:GetDescendants())
+
+                while true do
+                    local v86
+
+                    v85, v86 = v83(v84, v85)
+
+                    if v85 == nil then
+                        break
+                    end
+                    if u41[v86.Name] then
+                        u34(v86, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), u41[v86.Name])
+                    end
+                end
+            else
+                if ItemESP then
+                    ItemESP:Disconnect()
+                end
+
+                local v87, v88, v89 = ipairs(workspace.GameplayFolder:GetDescendants())
+
+                while true do
+                    local v90
+
+                    v89, v90 = v87(v88, v89)
+
+                    if v89 == nil then
+                        break
+                    end
+                    if u41[v90.Name] then
+                        v90.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5e01}\u{900f}\u{89c6} | Currency ESP', false, function(p91)
+            if p91 then
+                CurrencyESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p92)
+                    if u39[p92.Name] then
+                        u34(p92, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), 'Currency [ ' .. u39[p92.Name] .. ' ]')
+                    end
+                end)
+
+                local v93, v94, v95 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v96
+
+                    v95, v96 = v93(v94, v95)
+
+                    if v95 == nil then
+                        break
+                    end
+                    if u39[v96.Name] then
+                        u34(v96, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), 'Currency [ ' .. u39[v96.Name] .. ' ]')
+                    end
+                end
+            else
+                if CurrencyESP then
+                    CurrencyESP:Disconnect()
+                end
+
+                local v97, v98, v99 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v100
+
+                    v99, v100 = v97(v98, v99)
+
+                    if v99 == nil then
+                        break
+                    end
+                    if u39[v100.Name] then
+                        v100.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5f39}\u{900f}\u{89c6} | Ammo ESP', false, function(p101)
+            if p101 then
+                AmmoESP = workspace.DescendantAdded:Connect(function(p102)
+                    if u42[p102.Name] then
+                        u34(p102, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), 'Ammo [ ' .. u42[p102.Name] .. ' ]')
+                    end
+                end)
+
+                local v103, v104, v105 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v106
+
+                    v105, v106 = v103(v104, v105)
+
+                    if v105 == nil then
+                        break
+                    end
+                    if u42[v106.Name] then
+                        u34(v106, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), 'Ammo [ ' .. u42[v106.Name] .. ' ]')
+                    end
+                end
+            else
+                if AmmoESP then
+                    AmmoESP:Disconnect()
+                end
+
+                local v107, v108, v109 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v110
+
+                    v109, v110 = v107(v108, v109)
+
+                    if v109 == nil then
+                        break
+                    end
+                    if u42[v110.Name] then
+                        v110.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{7535}\u{673a}\u{900f}\u{89c6} | Generator ESP', false, function(p111)
+            if p111 then
+                GeneratorESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p112)
+                    if (p112.Name == 'Generator' or (p112.Name == 'PresetGenerator' or p112.Name == 'EncounterGenerator')) and p112:IsA('Model') then
+                        local _Model = p112:WaitForChild('Model')
+                        local _Fixed = p112:WaitForChild('Fixed')
+                        local _Value = _Fixed.Value
+                        local _, _ = u34(_Model, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'Generator [ ' .. _Value .. ' % ]', true)
+
+                        _Fixed.Changed:Connect(function()
+                            local _Value2 = _Fixed.Value
+
+                            _Model.QY.QY.Text = 'Generator [ ' .. _Value2 .. ' % ]'
+                        end)
+                    end
+                end)
+
+                local v117, v118, v119 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v120
+
+                    v119, v120 = v117(v118, v119)
+
+                    if v119 == nil then
+                        break
+                    end
+                    if (v120.Name == 'Generator' or (v120.Name == 'PresetGenerator' or v120.Name == 'EncounterGenerator')) and v120:IsA('Model') then
+                        local _Model2 = v120:WaitForChild('Model')
+                        local _Fixed2 = v120:WaitForChild('Fixed')
+                        local _Value3 = _Fixed2.Value
+                        local _, _ = u34(_Model2, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'Generator [ ' .. _Value3 .. ' % ]', true)
+
+                        _Fixed2.Changed:Connect(function()
+                            local _Value4 = _Fixed2.Value
+
+                            _Model2.QY.QY.Text = 'Generator [ ' .. _Value4 .. ' % ]'
+                        end)
+                    end
+                end
+            else
+                if GeneratorESP then
+                    GeneratorESP:Disconnect()
+                end
+
+                local v125, v126, v127 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v128
+
+                    v127, v128 = v125(v126, v127)
+
+                    if v127 == nil then
+                        break
+                    end
+                    if (v128.Name == 'Generator' or (v128.Name == 'PresetGenerator' or v128.Name == 'EncounterGenerator')) and v128:IsA('Model') then
+                        local _Model3 = v128:FindFirstChild('Model')
+
+                        _Model3.QYHighlight:Destroy()
+                        _Model3.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5b50}\u{900f}\u{89c6} | Locker ESP', false, function(p130)
+            if p130 then
+                LockerESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p131)
+                    if (p131.Name == 'Locker' or p131.Name == 'LockerUnderwater') and p131:IsA('Model') then
+                        u34(p131, Color3.new(0, 0, 1), UDim2.new(0, 100, 0, 100), 'Locker')
+                    end
+                end)
+
+                local v132, v133, v134 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v135
+
+                    v134, v135 = v132(v133, v134)
+
+                    if v134 == nil then
+                        break
+                    end
+                    if (v135.Name == 'Locker' or v135.Name == 'LockerUnderwater') and v135:IsA('Model') then
+                        u34(v135, Color3.new(0, 0, 1), UDim2.new(0, 100, 0, 100), 'Locker')
+                    end
+                end
+            else
+                if LockerESP then
+                    LockerESP:Disconnect()
+                end
+
+                local v136, v137, v138 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v139
+
+                    v138, v139 = v136(v137, v138)
+
+                    if v138 == nil then
+                        break
+                    end
+                    if (v139.Name == 'Locker' or v139.Name == 'LockerUnderwater') and v139:IsA('Model') then
+                        v139.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{6746}\u{900f}\u{89c6} | Lever ESP', false, function(p140)
+            if p140 then
+                LeverESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p141)
+                    if p141.Name == 'Lever' or p141.Name == 'TurretControls' then
+                        local _, _ = u34(p141, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'Lever', true)
+                    end
+                end)
+
+                local v142, v143, v144 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v145
+
+                    v144, v145 = v142(v143, v144)
+
+                    if v144 == nil then
+                        break
+                    end
+                    if v145.Name == 'Lever' or v145.Name == 'TurretControls' then
+                        local _, _ = u34(v145, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'Lever', true)
+                    end
+                end
+            else
+                if LeverESP then
+                    LeverESP:Disconnect()
+                end
+
+                local v146, v147, v148 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v149
+
+                    v148, v149 = v146(v147, v148)
+
+                    if v148 == nil then
+                        break
+                    end
+                    if v149.Name == 'Lever' or v149.Name == 'TurretControls' then
+                        v149.QYHighlight:Destroy()
+                        v149.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{97f3}\u{673a}\u{900f}\u{89c6} | Radio ESP', false, function(p150)
+            if p150 then
+                RadioESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p151)
+                    if p151.Name == 'Radio' then
+                        local _, _ = u34(p151, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), 'Radio', true)
+                    end
+                end)
+
+                local v152, v153, v154 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v155
+
+                    v154, v155 = v152(v153, v154)
+
+                    if v154 == nil then
+                        break
+                    end
+                    if v155.Name == 'Radio' then
+                        local _, _ = u34(v155, Color3.new(1, 1, 0), UDim2.new(0, 100, 0, 100), 'Radio', true)
+                    end
+                end
+            else
+                if RadioESP then
+                    RadioESP:Disconnect()
+                end
+
+                local v156, v157, v158 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v159
+
+                    v158, v159 = v156(v157, v158)
+
+                    if v158 == nil then
+                        break
+                    end
+                    if v159.Name == 'Radio' then
+                        v159.QYHighlight:Destroy()
+                        v159.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5f39}\u{900f}\u{89c6} | Bomb ESP', false, function(p160)
+            if p160 then
+                BombESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p161)
+                    if p161.Name == 'Landmine' or p161.Name == 'Main' and p161.Parent.Name == 'Tripwire' then
+                        u34(p161, Color3.new(1, 0, 0), UDim2.new(0, 100, 0, 100), 'Bomb')
+                    end
+                end)
+
+                local v162, v163, v164 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v165
+
+                    v164, v165 = v162(v163, v164)
+
+                    if v164 == nil then
+                        break
+                    end
+                    if v165.Name == 'Landmine' or v165.Name == 'Main' and v165.Parent.Name == 'Tripwire' then
+                        u34(v165, Color3.new(1, 0, 0), UDim2.new(0, 100, 0, 100), 'Bomb')
+                    end
+                end
+            else
+                if BombESP then
+                    BombESP:Disconnect()
+                end
+
+                local v166, v167, v168 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v169
+
+                    v168, v169 = v166(v167, v168)
+
+                    if v168 == nil then
+                        break
+                    end
+                    if v169.Name == 'Landmine' or v169.Name == 'Main' and v169.Parent.Name == 'Tripwire' then
+                        v169.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{900f}\u{89c6} | Door ESP', false, function(p170)
+            if p170 then
+                DoorESP = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p171)
+                    if (p171.Name == 'NormalDoor' or p171.Name == 'BigDoor') and (p171:IsA('Model') and p171.Parent.Name == 'Entrances') then
+                        local _OpenValue = p171:WaitForChild('OpenValue')
+
+                        if _OpenValue.Value == false then
+                            local _, _ = u34(p171, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'Door', true)
+                        end
+
+                        _OpenValue:GetPropertyChangedSignal('Value'):Connect(function()
+                            if _OpenValue.Value == true then
+                                local _QYHighlight = p171:FindFirstChild('QYHighlight')
+
+                                if _QYHighlight then
+                                    _QYHighlight:Destroy()
+                                end
+
+                                local _QY = p171:FindFirstChild('QY')
+
+                                if _QY then
+                                    _QY:Destroy()
+                                end
+                            end
+                        end)
+                    end
+                end)
+
+                local v175, v176, v177 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local u178
+
+                    v177, u178 = v175(v176, v177)
+
+                    if v177 == nil then
+                        break
+                    end
+                    if (u178.Name == 'NormalDoor' or u178.Name == 'BigDoor') and (u178:IsA('Model') and u178.Parent.Name == 'Entrances') then
+                        local _OpenValue2 = u178:WaitForChild('OpenValue')
+
+                        if _OpenValue2.Value == false then
+                            local _, _ = u34(u178, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'Door', true)
+                        end
+
+                        _OpenValue2:GetPropertyChangedSignal('Value'):Connect(function()
+                            if _OpenValue2.Value == true then
+                                local _QYHighlight2 = u178:FindFirstChild('QYHighlight')
+
+                                if _QYHighlight2 then
+                                    _QYHighlight2:Destroy()
+                                end
+
+                                local _QY2 = u178:FindFirstChild('QY')
+
+                                if _QY2 then
+                                    _QY2:Destroy()
+                                end
+                            end
+                        end)
+                    end
+                end
+            else
+                if DoorESP then
+                    DoorESP:Disconnect()
+                end
+
+                local v182, v183, v184 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v185
+
+                    v184, v185 = v182(v183, v184)
+
+                    if v184 == nil then
+                        break
+                    end
+                    if (v185.Name == 'NormalDoor' or v185.Name == 'BigDoor') and (v185:IsA('Model') and v185.Parent.Name == 'Entrances') then
+                        local _QYHighlight3 = v185:FindFirstChild('QYHighlight')
+
+                        if _QYHighlight3 then
+                            _QYHighlight3:Destroy()
+                        end
+
+                        local _QY3 = v185:FindFirstChild('QY')
+
+                        if _QY3 then
+                            _QY3:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5723}\u{8282}\u{5927}\u{95e8}\u{900f}\u{89c6} | Graveyard Gate ESP', false, function(p188)
+            if p188 then
+                GraveyardGateESP = workspace.DescendantAdded:Connect(function(p189)
+                    if p189.Name == 'GraveyardGate' and p189.Parent.Name == 'Entrances' then
+                        u34(p189, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'GraveyardGate')
+                    end
+                end)
+
+                local v190, v191, v192 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v193
+
+                    v192, v193 = v190(v191, v192)
+
+                    if v192 == nil then
+                        break
+                    end
+                    if v193.Name == 'GraveyardGate' and v193.Parent.Name == 'Entrances' then
+                        u34(v193, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'GraveyardGate')
+                    end
+                end
+            else
+                if GraveyardGateESP then
+                    GraveyardGateESP:Disconnect()
+                end
+
+                local v194, v195, v196 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v197
+
+                    v196, v197 = v194(v195, v196)
+
+                    if v196 == nil then
+                        break
+                    end
+                    if v197.Name == 'GraveyardGate' and v197.Parent.Name == 'Entrances' then
+                        v197.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5723}\u{8282}\u{95e8}\u{900f}\u{89c6} | Crypt Door ESP', false, function(p198)
+            if p198 then
+                CryptDoorESP = workspace.DescendantAdded:Connect(function(p199)
+                    if p199.Name == 'CryptDoor' and p199.Parent.Name == 'Entrances' then
+                        u34(p199, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'CryptDoor')
+                    end
+                end)
+
+                local v200, v201, v202 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v203
+
+                    v202, v203 = v200(v201, v202)
+
+                    if v202 == nil then
+                        break
+                    end
+                    if v203.Name == 'CryptDoor' and v203.Parent.Name == 'Entrances' then
+                        u34(v203, Color3.new(0, 1, 1), UDim2.new(0, 100, 0, 100), 'CryptDoor')
+                    end
+                end
+            else
+                if CryptDoorESP then
+                    CryptDoorESP:Disconnect()
+                end
+
+                local v204, v205, v206 = ipairs(workspace:GetDescendants())
+
+                while true do
+                    local v207
+
+                    v206, v207 = v204(v205, v206)
+
+                    if v206 == nil then
+                        break
+                    end
+                    if v207.Name == 'CryptDoor' and v207.Parent.Name == 'Entrances' then
+                        v207.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{5bb6}\u{900f}\u{89c6} | Player ESP', false, function(p208)
+            if p208 then
+                PlayerESP = game.Players.PlayerAdded:Connect(function(p209)
+                    if p209 ~= game.Players.LocalPlayer then
+                        p209.CharacterAdded:Connect(function(p210)
+                            local _, _ = u34(p210, Color3.new(1, 1, 1), UDim2.new(0, 100, 0, 100), p210.Name, true)
+                        end)
+                    end
+                end)
+
+                local v211, v212, v213 = pairs(game.Players:GetPlayers())
+
+                while true do
+                    local v214
+
+                    v213, v214 = v211(v212, v213)
+
+                    if v213 == nil then
+                        break
+                    end
+                    if v214 ~= game.Players.LocalPlayer then
+                        local _, _ = u34(v214.Character, Color3.new(1, 1, 1), UDim2.new(0, 100, 0, 100), v214.Name, true)
+                    end
+                end
+            else
+                if PlayerESP then
+                    PlayerESP:Disconnect()
+                end
+
+                local v215, v216, v217 = pairs(game.Players:GetPlayers())
+
+                while true do
+                    local v218
+
+                    v217, v218 = v215(v216, v217)
+
+                    if v217 == nil then
+                        break
+                    end
+                    if v218 ~= game.Players.LocalPlayer then
+                        v218.Character.QYHighlight:Destroy()
+                        v218.Character.QY:Destroy()
+                    end
+                end
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{95f4}\u{4e92}\u{52a8} | Instant Interact', false, function(p219)
+            if p219 then
+                PromptButtonHoldBegan = game:GetService('ProximityPromptService').PromptButtonHoldBegan:Connect(function(p220)
+                    fireproximityprompt(p220)
+                end)
+            else
+                PromptButtonHoldBegan:Disconnect()
+            end
+        end)
+        v21:Toggle('\u{fffd}\u{fffd}\u{9762}\u{5149}\u{4eae} | Full Bright', false, function(p221)
+            if p221 then
+                game.Lighting.Ambient = Color3.new(1, 1, 1)
+            else
+                game.Lighting.Ambient = Color3.new(0, 0, 0)
+            end
+        end)
+        v21:Button('\u{fffd}\u{fffd}\u{5f00}\u{4e0b}\u{4e00}\u{6247}\u{95e8} | Open The Next Door', function()
+            local function u226()
+                local v222, v223, v224 = pairs(workspace:GetDescendants())
+
+                while true do
+                    local v225
+
+                    v224, v225 = v222(v223, v224)
+
+                    if v224 == nil then
+                        break
+                    end
+                    if v225:IsA('Folder') and v225.Name == 'Rooms' then
+                        return v225:GetChildren()
+                    end
+                end
+
+                return nil
+            end
+            local function v228()
+                local v227 = u226()
+
+                if v227 and #v227 >= 2 then
+                    return v227[#v227 - 1]
+                else
+                    return nil
+                end
+            end
+
+            local v230 = (function()
+                local v229 = u226()
+
+                if v229 and #v229 > 0 then
+                    return v229[#v229]
+                else
+                    return nil
+                end
+            end)()
+
+            if not v230 then
+                Notify('\u{fffd}\u{fffd}\u{627e}\u{5230}\u{4e0b}\u{4e00}\u{9053}\u{95e8}')
+
+                return
+            end
+
+            local v231 = v228()
+            local _Entrances = v230:FindFirstChild('Entrances')
+
+            if _Entrances then
+                _Entrances = v230.Entrances:FindFirstChild('NormalDoor') or v230.Entrances:FindFirstChild('BigDoor')
+            end
+            if not _Entrances then
+                Notify('\u{fffd}\u{fffd}\u{627e}\u{5230}\u{5f53}\u{524d}\u{623f}\u{95f4}\u{7684}\u{95e8}')
+
+                return
+            end
+            if _Entrances:FindFirstChild('Lock') then
+                local v233 = false
+
+                if v231 then
+                    local v234, v235, v236 = v231:GetDescendants()
+
+                    while true do
+                        local v237
+
+                        v236, v237 = v234(v235, v236)
+
+                        if v236 == nil then
+                            break
+                        end
+                        if (v237.Name == 'NormalKeyCard' or (v237.Name == 'RidgeKeyCard' or v237.Name == 'PasswordPaper')) and (v237:IsA('Model') and (v237.ProxyPart and v237.ProxyPart.ProximityPrompt)) then
+                            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(v237.ProxyPart.Position))
+                            task.wait(0.3)
+                            fireproximityprompt(v237.ProxyPart.ProximityPrompt)
+                            task.wait(0.3)
+
+                            v233 = true
+
+                            break
+                        end
+                    end
+                end
+                if not v233 then
+                    Notify('\u{fffd}\u{fffd}\u{627e}\u{5230}\u{94a5}\u{5319}\u{6216}\u{5bc6}\u{7801}\u{7eb8}')
+
+                    return
+                end
+
+                game.Players.LocalPlayer.Character:PivotTo(_Entrances.CollisionPart.CFrame)
+                task.wait(0.3)
+
+                if _Entrances:FindFirstChild('Lock') then
+                    if _Entrances.Lock:FindFirstChild('Main') then
+                        if _Entrances.Lock.Main:FindFirstChild('RemoteFunction') and _Entrances.Lock.Main:FindFirstChild('ProximityPrompt') then
+                            if workspace:FindFirstChild('PasswordPaper') and (workspace.PasswordPaper:FindFirstChild('Code') and (workspace.PasswordPaper.Code:FindFirstChild('SurfaceGui') and workspace.PasswordPaper.Code.SurfaceGui:FindFirstChild('TextLabel'))) then
+                                _Entrances.Lock.Main.RemoteFunction:InvokeServer(workspace.PasswordPaper.Code.SurfaceGui.TextLabel.Text)
+                            else
+                                fireproximityprompt(_Entrances.Lock.Main.ProximityPrompt)
+                            end
+                        else
+                            Notify('\u{fffd}\u{fffd}\u{9501}\u{673a}\u{5236}\u{4e0d}\u{5b8c}\u{6574}, \u{65e0}\u{6cd5}\u{4e92}\u{52a8}')
+                        end
+                    else
+                        Notify('\u{fffd}\u{fffd}\u{9501}\u{673a}\u{5236}\u{4e0d}\u{5b8c}\u{6574}, \u{65e0}\u{6cd5}\u{4e92}\u{52a8}')
+                    end
+                end
+            end
+
+            local _X = _Entrances.CollisionPart.CFrame.Position.X
+            local _Y = _Entrances.CollisionPart.CFrame.Position.Y
+            local _Z = _Entrances.CollisionPart.CFrame.Position.Z
+
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(_X - 2, _Y, _Z))
+            task.wait(0.1)
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(_X + 2, _Y, _Z))
+            task.wait(0.1)
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(_X, _Y, _Z + 2))
+            task.wait(0.1)
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(_X, _Y, _Z - 2))
+
+            if _Entrances.Root and _Entrances.Root.ProximityPrompt then
+                fireproximityprompt(_Entrances.Root.ProximityPrompt)
+            else
+                Notify('\u{fffd}\u{fffd}\u{6cd5}\u{627e}\u{5230}\u{95e8}\u{7684}\u{4e92}\u{52a8}\u{63d0}\u{793a}')
+            end
+        end)
+
+        local v241 = v20:Tab('\u{fffd}\u{fffd}\u{9664}')
+
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Eyefestation | Remove Eyefestation', false, function(p242)
+            if p242 then
+                RemoveEyefestation = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p243)
+                    if p243.Name == 'Eyefestation' then
+                        task.wait(1.5)
+
+                        p243.Active.Value = false
+                    end
+                end)
+
+                local v244, v245, v246 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v247
+
+                    v246, v247 = v244(v245, v246)
+
+                    if v246 == nil then
+                        break
+                    end
+                    if v247.Name == 'Eyefestation' then
+                        task.wait(1.5)
+
+                        v247.Active.Value = false
+                    end
+                end
+            else
+                if RemoveEyefestation then
+                    RemoveEyefestation:Disconnect()
+                end
+
+                local v248, v249, v250 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v251
+
+                    v250, v251 = v248(v249, v250)
+
+                    if v250 == nil then
+                        break
+                    end
+                    if v251.Name == 'Eyefestation' then
+                        v251.Active.Value = true
+                    end
+                end
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Enraged Eyefestation | Remove Enraged Eyefestation', false, function(p252)
+            if p252 then
+                RemoveEnragedEyefestation = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p253)
+                    if p253.Name == 'Eyefestation' then
+                        task.wait(0.1)
+
+                        p253.Active.Value = false
+                    end
+                end)
+
+                local v254, v255, v256 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v257
+
+                    v256, v257 = v254(v255, v256)
+
+                    if v256 == nil then
+                        break
+                    end
+                    if v257.Name == 'Eyefestation' then
+                        task.wait(0.1)
+
+                        v257.Active.Value = false
+                    end
+                end
+            else
+                if RemoveEnragedEyefestation then
+                    RemoveEnragedEyefestation:Disconnect()
+                end
+
+                local v258, v259, v260 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v261
+
+                    v260, v261 = v258(v259, v260)
+
+                    if v260 == nil then
+                        break
+                    end
+                    if v261.Name == 'Eyefestation' then
+                        v261.Active.Value = true
+                    end
+                end
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Searchlights | Remove Searchlights', false, function(p262)
+            if p262 then
+                local v263, v264, v265 = pairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v266
+
+                    v265, v266 = v263(v264, v265)
+
+                    if v265 == nil then
+                        break
+                    end
+                    if v266.Name == 'Searchlights' then
+                        local _Body = v266:WaitForChild('HRP'):WaitForChild('Body')
+
+                        _Body:SetAttribute('Active', false)
+
+                        _Body.Enabled = false
+                    end
+                end
+
+                RemoveSearchlights = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p268)
+                    if p268.Name == 'Searchlights' then
+                        local _Body2 = p268:WaitForChild('HRP'):WaitForChild('Body')
+
+                        _Body2:SetAttribute('Active', false)
+
+                        _Body2.Enabled = false
+                    end
+                end)
+            else
+                if RemoveSearchlights then
+                    RemoveSearchlights:Disconnect()
+                end
+
+                local v270, v271, v272 = pairs(Descendants)
+
+                while true do
+                    local v273
+
+                    v272, v273 = v270(v271, v272)
+
+                    if v272 == nil then
+                        break
+                    end
+                    if v273.Name == 'Searchlights' then
+                        v273.HRP.Body:SetAttribute('Active', true)
+
+                        v273.HRP.Body.Enabled = false
+                    end
+                end
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Chase Steam | Remove Chase Steam', false, function(p274)
+            if p274 then
+                RemoveChaseSteam = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p275)
+                    if p275.Name == 'ChaseSteam' then
+                        task.wait()
+                        p275:Destroy()
+                    end
+                end)
+
+                local v276, v277, v278 = pairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v279
+
+                    v278, v279 = v276(v277, v278)
+
+                    if v278 == nil then
+                        break
+                    end
+                    if v279.Name == 'ChaseSteam' then
+                        task.wait()
+                        v279:Destroy()
+                    end
+                end
+            else
+                RemoveChaseSteam:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Chase Fan Model | Remove Chase Fan Model', false, function(p280)
+            if p280 then
+                RemoveChaseFanModel = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p281)
+                    if p281.Name == 'ChaseFanModel1' or (p281.Name == 'ChaseFanModel2' or (p281.Name == 'ChaseFanModel3' or (p281.Name == 'ChaseFanModel4' or (p281.Name == 'ChaseFanModel5' or p281.Name == 'ChaseFanModel6')))) then
+                        task.wait()
+                        p281:Destroy()
+                    end
+                end)
+
+                local v282, v283, v284 = pairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v285
+
+                    v284, v285 = v282(v283, v284)
+
+                    if v284 == nil then
+                        break
+                    end
+                    if v285.Name == 'ChaseFanModel1' or (v285.Name == 'ChaseFanModel2' or (v285.Name == 'ChaseFanModel3' or (v285.Name == 'ChaseFanModel4' or (v285.Name == 'ChaseFanModel5' or v285.Name == 'ChaseFanModel6')))) then
+                        task.wait()
+                        v285:Destroy()
+                    end
+                end
+            else
+                RemoveChaseFanModel:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Turret | Remove Turret', false, function(p286)
+            if p286 then
+                RemoveTurret = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p287)
+                    if string.match(p287.Name, 'TurretSpawn') then
+                        p287:GetAttributeChangedSignal('Active'):Connect(function()
+                            p287:SetAttribute('Active', false)
+                        end)
+                    end
+                end)
+
+                local v288, v289, v290 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v291
+
+                    v290, v291 = v288(v289, v290)
+
+                    if v290 == nil then
+                        break
+                    end
+                    if string.match(v291.Name, 'TurretSpawn') then
+                        v291:SetAttribute('Active', false)
+                    end
+                end
+            else
+                if RemoveTurret then
+                    RemoveTurret:Disconnect()
+                end
+
+                local v292, v293, v294 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v295
+
+                    v294, v295 = v292(v293, v294)
+
+                    if v294 == nil then
+                        break
+                    end
+                    if string.match(v295.Name, 'TurretSpawn') then
+                        v295:SetAttribute('Active', true)
+                    end
+                end
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Pandemonium | Remove Pandemonium', false, function(p296)
+            if p296 then
+                RemovePandemonium = workspace.DescendantAdded:Connect(function(p297)
+                    if p297.Name == 'Pandemonium' then
+                        task.wait()
+                        p297:Destroy()
+                        Notify('Pandemonium\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v298, v299, v300 = pairs(workspace:GetDescendants())
+
+                while true do
+                    local v301
+
+                    v300, v301 = v298(v299, v300)
+
+                    if v300 == nil then
+                        break
+                    end
+                    if v301.Name == 'Pandemonium' then
+                        task.wait()
+                        v301:Destroy()
+                        Notify('Pandemonium\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemovePandemonium:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Statue | Remove Statue', false, function(p302)
+            if p302 then
+                RemoveStatue = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p303)
+                    if p303.Name == 'Statue' or p303.Name == 'StatueRoot' then
+                        task.wait()
+                        p303:Destroy()
+                        Notify('Statue\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v304, v305, v306 = pairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v307
+
+                    v306, v307 = v304(v305, v306)
+
+                    if v306 == nil then
+                        break
+                    end
+                    if v307.Name == 'Statue' or v307.Name == 'StatueRoot' then
+                        task.wait()
+                        v307:Destroy()
+                        Notify('Statue\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveStatue:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Bigger Statue | Remove Bigger Statue', false, function(p308)
+            if p308 then
+                RemoveBiggerStatue = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p309)
+                    if p309.Name == 'BiggerStatue' then
+                        task.wait()
+                        p309:Destroy()
+                        Notify('Bigger Statue\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v310, v311, v312 = pairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v313
+
+                    v312, v313 = v310(v311, v312)
+
+                    if v312 == nil then
+                        break
+                    end
+                    if v313.Name == 'BiggerStatue' then
+                        task.wait()
+                        v313:Destroy()
+                        Notify('Bigger Statue\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveBiggerStatue:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}DiVine | Remove DiVine', false, function(p314)
+            if p314 then
+                RemoveDiVine = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p315)
+                    if p315.Name == 'DiVine' then
+                        task.wait()
+                        p315:Destroy()
+                        Notify('DiVine\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v316, v317, v318 = pairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local v319
+
+                    v318, v319 = v316(v317, v318)
+
+                    if v318 == nil then
+                        break
+                    end
+                    if v319.Name == 'DiVine' then
+                        task.wait()
+                        v319:Destroy()
+                        Notify('DiVine\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveDiVine:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Fish | Remove Fish', false, function(p320)
+            if p320 then
+                RemoveFish = workspace.DescendantAdded:Connect(function(p321)
+                    if p321.Name == 'FishHead' or p321.Name == 'FishBody' then
+                        task.wait()
+                        p321:Destroy()
+                        Notify('Fish\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v322, v323, v324 = pairs(workspace:GetDescendants())
+
+                while true do
+                    local v325
+
+                    v324, v325 = v322(v323, v324)
+
+                    if v324 == nil then
+                        break
+                    end
+                    if v325.Name == 'FishHead' or v325.Name == 'FishBody' then
+                        task.wait()
+                        v325:Destroy()
+                        Notify('Fish\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveFish:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Abomination | Remove Abomination', false, function(p326)
+            if p326 then
+                RemoveAbomination = workspace.DescendantAdded:Connect(function(p327)
+                    if p327.Name == 'Abomination' then
+                        task.wait()
+                        p327:Destroy()
+                        Notify('Abomination\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v328, v329, v330 = pairs(workspace:GetDescendants())
+
+                while true do
+                    local v331
+
+                    v330, v331 = v328(v329, v330)
+
+                    if v330 == nil then
+                        break
+                    end
+                    if v331.Name == 'Abomination' then
+                        task.wait()
+                        v331:Destroy()
+                        Notify('Abomination\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveAbomination:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Pipsqueak | Remove Pipsqueak', false, function(p332)
+            if p332 then
+                RemovePipsqueak = workspace.DescendantAdded:Connect(function(p333)
+                    if p333.Name == 'Pipsqueak' then
+                        task.wait()
+                        p333:Destroy()
+                        Notify('Pipsqueak\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v334, v335, v336 = pairs(workspace:GetDescendants())
+
+                while true do
+                    local v337
+
+                    v336, v337 = v334(v335, v336)
+
+                    if v336 == nil then
+                        break
+                    end
+                    if v337.Name == 'Pipsqueak' then
+                        task.wait()
+                        v337:Destroy()
+                        Notify('Pipsqueak\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemovePipsqueak:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Baldi | Remove Baldi', false, function(p338)
+            if p338 then
+                RemoveBaldi = workspace.DescendantAdded:Connect(function(p339)
+                    if p339.Name == 'Baldi' then
+                        task.wait()
+                        p339:Destroy()
+                        Notify('Baldi\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v340, v341, v342 = pairs(workspace:GetDescendants())
+
+                while true do
+                    local v343
+
+                    v342, v343 = v340(v341, v342)
+
+                    if v342 == nil then
+                        break
+                    end
+                    if v343.Name == 'Baldi' then
+                        task.wait()
+                        v343:Destroy()
+                        Notify('Baldi\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveBaldi:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Bouncer | Remove Bouncer', false, function(p344)
+            if p344 then
+                RemoveBouncer = workspace.Monsters.DescendantAdded:Connect(function(p345)
+                    if p345.Name == 'Bouncer' then
+                        task.wait()
+                        p345:Destroy()
+                        Notify('Bouncer\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v346, v347, v348 = pairs(workspace.Monsters:GetDescendants())
+
+                while true do
+                    local v349
+
+                    v348, v349 = v346(v347, v348)
+
+                    if v348 == nil then
+                        break
+                    end
+                    if v349.Name == 'Bouncer' then
+                        task.wait()
+                        v349:Destroy()
+                        Notify('Bouncer\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveBouncer:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Skelepede | Remove Skelepede', false, function(p350)
+            if p350 then
+                RemoveSkelepede = workspace.Monsters.DescendantAdded:Connect(function(p351)
+                    if p351.Name == 'SkeletonHead' then
+                        task.wait()
+                        p351:Destroy()
+                        Notify('Skelepede\u{5df2}\u{5220}\u{9664}')
+                    end
+                end)
+
+                local v352, v353, v354 = pairs(workspace.Monsters:GetDescendants())
+
+                while true do
+                    local v355
+
+                    v354, v355 = v352(v353, v354)
+
+                    if v354 == nil then
+                        break
+                    end
+                    if v355.Name == 'SkeletonHead' then
+                        task.wait()
+                        v355:Destroy()
+                        Notify('Skelepede\u{5df2}\u{5220}\u{9664}')
+                    end
+                end
+            else
+                RemoveSkelepede:Disconnect()
+            end
+        end)
+        v241:Toggle('\u{fffd}\u{fffd}\u{9664}Parasite | Remove Parasite', false, function(p356)
+            if p356 then
+                RemoveParasite = workspace.Monsters.DescendantAdded:Connect(function(p357)
+                    if p357.Name == 'StatueRoot' then
+                        task.wait()
+                        p357:Destroy()
+                    end
+                end)
+
+                local v358, v359, v360 = pairs(workspace.Monsters:GetDescendants())
+
+                while true do
+                    local v361
+
+                    v360, v361 = v358(v359, v360)
+
+                    if v360 == nil then
+                        break
+                    end
+                    if v361.Name == 'StatueRoot' then
+                        task.wait()
+                        v361:Destroy()
+                    end
+                end
+            else
+                RemoveParasite:Disconnect()
+            end
+        end)
+
+        local v362 = v20:Tab('\u{fffd}\u{fffd}\u{52a8}')
+
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}\u{4e92}\u{52a8}\u{94a5}\u{5319}\u{5361} | Auto Interact Key', false, function(p363)
+            AutoInteractKey = p363
+
+            if p363 then
+                InteractKey = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p364)
+                    if p364:IsA('ProximityPrompt') and u38[p364.Parent.Parent.Name] then
+                        p364.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractKey and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(p364.Parent.Position) <= 10 then
+                                    fireproximityprompt(p364)
+                                end
+                            end
+                        end)
+                    end
+                end)
+
+                local v365, v366, v367 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local u368
+
+                    v367, u368 = v365(v366, v367)
+
+                    if v367 == nil then
+                        break
+                    end
+                    if u368:IsA('ProximityPrompt') and u38[u368.Parent.Parent.Name] then
+                        u368.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractKey and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(u368.Parent.Position) <= 10 then
+                                    fireproximityprompt(u368)
+                                end
+                            end
+                        end)
+                    end
+                end
+            else
+                if InteractKey then
+                    InteractKey:Disconnect()
+                end
+                if AutoInteractKey then
+                    AutoInteractKey = false
+                end
+            end
+        end)
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}\u{4e92}\u{52a8}\u{7535}\u{6c60} | Auto Interact Battery', false, function(p369)
+            AutoInteractBattery = p369
+
+            if p369 then
+                InteractBattery = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p370)
+                    if p370:IsA('ProximityPrompt') and u40[p370.Parent.Parent.Name] then
+                        p370.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractBattery and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(p370.Parent.Position) <= 10 then
+                                    fireproximityprompt(p370)
+                                end
+                            end
+                        end)
+                    end
+                end)
+
+                local v371, v372, v373 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local u374
+
+                    v373, u374 = v371(v372, v373)
+
+                    if v373 == nil then
+                        break
+                    end
+                    if u374:IsA('ProximityPrompt') and u40[u374.Parent.Parent.Name] then
+                        u374.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractBattery and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(u374.Parent.Position) <= 10 then
+                                    fireproximityprompt(u374)
+                                end
+                            end
+                        end)
+                    end
+                end
+            else
+                if InteractBattery then
+                    InteractBattery:Disconnect()
+                end
+                if AutoInteractBattery then
+                    AutoInteractBattery = false
+                end
+            end
+        end)
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}\u{4e92}\u{52a8}\u{7269}\u{54c1} | Auto Interact Item', false, function(p375)
+            AutoInteractItem = p375
+
+            if p375 then
+                InteractItem = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p376)
+                    if p376:IsA('ProximityPrompt') and u41[p376.Parent.Parent.Name] then
+                        p376.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractItem and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(p376.Parent.Position) <= 10 then
+                                    fireproximityprompt(p376)
+                                end
+                            end
+                        end)
+                    end
+                end)
+
+                local v377, v378, v379 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local u380
+
+                    v379, u380 = v377(v378, v379)
+
+                    if v379 == nil then
+                        break
+                    end
+                    if u380:IsA('ProximityPrompt') and u41[u380.Parent.Parent.Name] then
+                        u380.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractItem and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(u380.Parent.Position) <= 10 then
+                                    fireproximityprompt(u380)
+                                end
+                            end
+                        end)
+                    end
+                end
+            else
+                if InteractItem then
+                    InteractItem:Disconnect()
+                end
+                if AutoInteractItem then
+                    AutoInteractItem = false
+                end
+            end
+        end)
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}\u{4e92}\u{52a8}\u{8d27}\u{5e01} | Auto Interact Currency', false, function(p381)
+            AutoInteractCurrency = p381
+
+            if p381 then
+                InteractCurrency = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p382)
+                    if p382:IsA('ProximityPrompt') and u39[p382.Parent.Parent.Name] then
+                        p382.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractCurrency and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(p382.Parent.Position) <= 10 then
+                                    fireproximityprompt(p382)
+                                end
+                            end
+                        end)
+                    end
+                end)
+
+                local v383, v384, v385 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local u386
+
+                    v385, u386 = v383(v384, v385)
+
+                    if v385 == nil then
+                        break
+                    end
+                    if u386:IsA('ProximityPrompt') and u39[u386.Parent.Parent.Name] then
+                        u386.MaxActivationDistance = 10
+
+                        task.spawn(function()
+                            while AutoInteractCurrency and task.wait(0.1) do
+                                if game.Players.LocalPlayer:DistanceFromCharacter(u386.Parent.Position) <= 10 then
+                                    fireproximityprompt(u386)
+                                end
+                            end
+                        end)
+                    end
+                end
+            else
+                if InteractCurrency then
+                    InteractCurrency:Disconnect()
+                end
+                if AutoInteractCurrency then
+                    AutoInteractCurrency = false
+                end
+            end
+        end)
+
+        local u387 = nil
+        local _circle = game.Players.LocalPlayer.PlayerGui.Main.PandemoniumMiniGame.Background.Frame.circle
+        local _Position = _circle.Position
+
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}Pandemonium\u{5c0f}\u{6e38}\u{620f} | Auto Pandemonium Minigame', false, function(p390)
+            if p390 then
+                u387 = _circle:GetPropertyChangedSignal('Position'):Connect(function()
+                    _circle.Position = _Position
+                end)
+            else
+                u387:Disconnect()
+            end
+        end)
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}\u{4fee}\u{53d1}\u{7535}\u{673a} | Auto Generator', false, function(p391)
+            AutoGenerator = p391
+
+            if p391 then
+                Generator = workspace.GameplayFolder.Rooms.DescendantAdded:Connect(function(p392)
+                    if (p392.Name == 'Generator' or (p392.Name == 'PresetGenerator' or p392.Name == 'EncounterGenerator')) and p392:IsA('Model') then
+                        task.spawn(function()
+                            while AutoGenerator and task.wait(0.1) do
+                                p392.RemoteFunction:InvokeServer()
+                                p392.RemoteEvent:FireServer(true)
+                            end
+                        end)
+                    end
+                end)
+
+                local v393, v394, v395 = ipairs(workspace.GameplayFolder.Rooms:GetDescendants())
+
+                while true do
+                    local u396
+
+                    v395, u396 = v393(v394, v395)
+
+                    if v395 == nil then
+                        break
+                    end
+                    if (u396.Name == 'Generator' or (u396.Name == 'PresetGenerator' or u396.Name == 'EncounterGenerator')) and u396:IsA('Model') then
+                        task.spawn(function()
+                            while AutoGenerator and task.wait(0.1) do
+                                u396.RemoteFunction:InvokeServer()
+                                u396.RemoteEvent:FireServer(true)
+                            end
+                        end)
+                    end
+                end
+            else
+                if Generator then
+                    Generator:Disconnect()
+                end
+                if AutoGenerator then
+                    AutoGenerator = false
+                end
+            end
+        end)
+        v362:Toggle('\u{fffd}\u{fffd}\u{52a8}\u{4f20}\u{9001}\u{8eb2}\u{907f} | Auto Hide', false, function(p397)
+            if p397 then
+                AutoHide = workspace.DescendantAdded:Connect(function(p398)
+                    if u37[p398.Name] and p398:IsA('Part') then
+                        if game.Players.LocalPlayer.Character.Humanoid.PlatformStand then
+                            game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
+                            WasPFS = true
+                        end
+
+                        local _CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, 2000, 0)
+
+                        local _LocalPlayer = game.Players.LocalPlayer
+                        local _Part = Instance.new('Part')
+
+                        _Part.Size = Vector3.new(10000, 1, 10000)
+
+                        if WasPFS then
+                            task.wait(1)
+                        end
+
+                        _Part.Position = _LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 10, 0)
+                        _Part.Anchored = true
+                        _Part.BrickColor = BrickColor.new('White')
+                        _Part.Parent = workspace
+
+                        p398.Destroying:Wait()
+
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = _CFrame
+
+                        _Part:Destroy()
+
+                        if WasPFS then
+                            game.Players.LocalPlayer.Character.Humanoid.PlatformStand = true
+                            WasPFS = nil
+                        end
+                    end
+                end)
+            else
+                AutoHide:Disconnect()
+            end
+        end)
+
+        local v402 = v20:Tab('\u{fffd}\u{fffd}\u{5bb6}')
+
+        v402:Toggle('\u{fffd}\u{fffd}\u{5899} | Noclip', false, function(p403)
+            if p403 then
+                Noclip = false
+                NoclipPing = game:GetService('RunService').Stepped:Connect(function()
+                    if Noclip == false and game.Players.LocalPlayer.Character ~= nil then
+                        local v404, v405, v406 = pairs(game.Players.LocalPlayer.Character:GetDescendants())
+
+                        while true do
+                            local v407
+
+                            v406, v407 = v404(v405, v406)
+
+                            if v406 == nil then
+                                break
+                            end
+                            if v407:IsA('BasePart') and v407.CanCollide == true then
+                                v407.CanCollide = false
+                            end
+                        end
+                    end
+                end)
+            else
+                if NoclipPing then
+                    NoclipPing:Disconnect()
+                end
+
+                Noclip = true
+            end
+        end)
+        v402:Toggle('\u{fffd}\u{fffd}\u{9650}\u{4f53}\u{529b} | Infinite Stamina', false, function(p408)
+            if p408 then
+                InfiniteStamina = game:GetService('RunService').RenderStepped:Connect(function()
+                    require(game.Players.LocalPlayer.PlayerGui.Main.Client.MainClient.Sprinting).Stamina = 100
+                end)
+            else
+                InfiniteStamina:Disconnect()
+            end
+        end)
+        v402:Toggle('\u{fffd}\u{fffd}\u{7528}\u{901f}\u{5ea6} | Enable Speed', false, function(p409)
+            if p409 then
+                EnableSpeed = game:GetService('RunService').RenderStepped:Connect(function()
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Speed or 16
+                end)
+            else
+                EnableSpeed:Disconnect()
+
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            end
+        end)
+        v402:Toggle('\u{fffd}\u{fffd}\u{7528}\u{6e38}\u{6cf3}\u{901f}\u{5ea6} | Enable Swim Speed', false, function(p410)
+            if p410 then
+                EnableSwimSpeed = game:GetService('RunService').Heartbeat:Connect(function()
+                    if game.Players.LocalPlayer.Character.Humanoid.PlatformStand then
+                        game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * SwimSpeed / 10)
+                    end
+                end)
+            else
+                EnableSwimSpeed:Disconnect()
+            end
+        end)
+        v402:Toggle('\u{fffd}\u{fffd}\u{7528}\u{89c6}\u{91ce}\u{5bbd}\u{5ea6} | Enable FOV', false, function(p411)
+            if p411 then
+                EnableFOV = game:GetService('RunService').RenderStepped:Connect(function()
+                    workspace.Camera.FieldOfView = FOV or 90
+                end)
+            else
+                EnableFOV:Disconnect()
+
+                workspace.Camera.FieldOfView = 90
+            end
+        end)
+        v402:Slider('\u{fffd}\u{fffd}\u{5ea6} | Speed', 16, 100, 0, function(p412)
+            Speed = p412
+        end)
+        v402:Slider('\u{fffd}\u{fffd}\u{6cf3}\u{901f}\u{5ea6} | Swim Speed', 0, 10, 0, function(p413)
+            SwimSpeed = p413
+        end)
+        v402:Slider('\u{fffd}\u{fffd}\u{91ce}\u{5bbd}\u{5ea6} | FOV', 90, 120, 0, function(p414)
+            FOV = p414
+        end)
+
+        local v415 = v20:Tab('\u{fffd}\u{fffd}\u{4ed6}')
+
+        v415:Button('\u{fffd}\u{fffd}\u{6301}\u{4f5c}\u{8005}', function()
+            setclipboard('https://img520.com/mRZCCB.png')
+            u19:Notification('\u{fffd}\u{fffd}\u{793a}', '\u{fffd}\u{fffd}\u{5236}\u{6210}\u{529f} !', '\u{fffd}\u{fffd}\u{8ba4}')
+        end)
+        v415:Button('\u{fffd}\u{fffd}\u{95ed}\u{754c}\u{9762}', function()
+            game.CoreGui.VisionLibV2:Destroy()
+            game.CoreGui.VisionLibOverlay:Destroy()
+
+            if game:GetService('UserInputService').KeyboardEnabled and game:GetService('UserInputService').MouseEnabled then
+                game.CoreGui.Vape:Destroy()
+            elseif game:GetService('UserInputService').TouchEnabled then
+                game.CoreGui.Open:Destroy()
+                game.CoreGui.Vape:Destroy()
+            end
+        end)
+    elseif v17 == true then
+        u19:Notification('\u{fffd}\u{fffd}\u{793a}', '\u{fffd}\u{fffd}\u{5df2}\u{88ab}\u{5217}\u{5165}\u{9ed1}\u{540d}\u{5355} \u{539f}\u{56e0}\u{4e3a} [ ' .. tostring(v18) .. ' ]', '\u{fffd}\u{fffd}\u{8ba4}')
+    end
+elseif v8 ~= false then
+    Notify('\u{fffd}\u{fffd}\u{8bc1}\u{5931}\u{8d25}')
+else
+    Notify('\u{fffd}\u{fffd}\u{672c}\u{4e0d}\u{6b63}\u{786e}')
+end
