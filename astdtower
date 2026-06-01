@@ -1,3 +1,17 @@
+queue_on_teleport([[
+    repeat task.wait() until game:IsLoaded()
+
+    local Players = game:GetService("Players")
+    local lp = Players.LocalPlayer
+
+    repeat task.wait() until lp
+    repeat task.wait() until lp:FindFirstChild("PlayerGui")
+
+    task.wait(5)
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RadiantSkullz/functions/refs/heads/main/astdtower"))()
+]])
+
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local GuiService = game:GetService("GuiService")
