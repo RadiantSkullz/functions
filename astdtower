@@ -1,0 +1,66 @@
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local GuiService = game:GetService("GuiService")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+
+local Player = Players.LocalPlayer
+local InputRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Input")
+
+repeat task.wait() until game:IsLoaded()
+
+task.wait(3)
+
+-- Auto Battle
+pcall(function()
+    InputRemote:FireServer("BuyAutoBattle")
+end)
+
+-- Speed x2
+pcall(function()
+    InputRemote:FireServer("SpeedChange", true)
+    task.wait(1.3)
+    InputRemote:FireServer("SpeedChange", true)
+end)
+
+local function spamButton(button)
+    if not button then
+        return
+    end
+
+    -- Direct click
+    pcall(function()
+        firesignal(button.MouseButton1Click)
+    end)
+
+    -- Selection + Enter spam
+    pcall(function()
+        GuiService.SelectedObject = button
+
+        for _ = 1, 5 do
+            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Return, false, game)
+            task.wait()
+            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Return, false, game)
+            task.wait()
+        end
+
+        GuiService.SelectedObject = nil
+    end)
+end
+
+task.spawn(function()
+    local playerGui = Player:WaitForChild("PlayerGui")
+
+    while true do
+        local success, nextButton = pcall(function()
+            return playerGui.HUD.MissionEnd.BG.Actions.Next
+        end)
+
+        if success and nextButton then
+            if nextButton.Visible then
+                spamButton(nextButton)
+            end
+        end
+
+        task.wait(0.03)
+    end
+end)
